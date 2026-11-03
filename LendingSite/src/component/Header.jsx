@@ -1,3 +1,5 @@
+import style from "./style/Header.module.css"
+
 function Header() {
 
   return (
@@ -7,4 +9,4 @@ function Header() {
   )
 }
 
-export default Button
+export default Header
