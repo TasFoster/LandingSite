@@ -1,6 +1,40 @@
-.main{
-    background-color: aquamarine;
+/* Глобальные настройки для всей страницы (body) */
+:global(body) {
+  margin: 0;                    /* Убираем стандартные отступы браузера */
+  padding: 0;
+  /* Березовый фон: очень светлый, теплый кремово-зеленоватый оттенок */
+  background-color: #f4f7f2;    
+  /* Темно-зеленый цвет текста, как листва, для контраста и мягкости */
+  color: #1e3a24;               
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Легкий узор березовой коры (опционально, можно убрать, если не нужен) */
+  background-image: radial-gradient(#e0e8db 1px, transparent 1px);
+  background-size: 20px 20px;
 }
-body{
-    background-color: aqua;
+
+/* Общие настройки для главного контейнера */
+.main {
+  max-width: 1200px;            /* Ограничиваем ширину, чтобы на больших экранах не было "резины" */
+  margin: 0 auto;               /* Центрируем контейнер по горизонтали */
+  padding: 40px 20px;           /* Внутренние отступы: 40px сверху/снизу и 20px по бокам */
+  
+  /* Настройки Flexbox для аккуратной сетки */
+  display: flex;
+  flex-direction: column;       /* Элементы идут друг под другом */
+  gap: 30px;                    /* Расстояние между Header, Card, Footer */
+  
+  /* Березовый акцент: делаем легкую полупрозрачную подложку для зоны контента */
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;          /* Скругляем углы */
+  box-shadow: 0 10px 30px rgba(30, 58, 36, 0.05); /* Мягкая зеленая тень */
+  backdrop-filter: blur(5px);   /* Легкое размытие фона за контейнером */
+}
+
+/* Опционально: настройки для маленьких экранов (мобильных) */
+@media (max-width: 768px) {
+  .main {
+    margin: 10px;               /* Отступы от краев на телефонах */
+    padding: 20px 15px;
+    gap: 15px;
+  }
 }

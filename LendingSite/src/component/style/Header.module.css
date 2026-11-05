@@ -16,8 +16,88 @@
 
 /* Стили для заголовка */
 .title {
+
+
   margin: 0;               /* Убираем стандартные отступы h1, чтобы не было смещения */
   font-size: 24px;         /* Адекватный размер шрифта */
   font-weight: 600;        /* Чуть жирнее */
-  color: #333;             /* Темно-серый цвет */
+  --color: #333;             /* Темно-серый цвет */
+}
+.title [data_theme = "dark"]{
+  --color: #fffbfb;
+}/* Общая обертка шапки */
+.headerWrapper {
+  display: flex;
+  align-items: center; /* Выравниваем лого, текст и кнопку по центру */
+  gap: 15px;           /* Отступ между лого и текстом */
+  padding: 15px 25px;  /* Внутренние отступы шапки */
+  border-radius: 12px; /* Скругляем углы самой шапки */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Плавная смена темы */
+  
+  /* По умолчанию (светлая березово-зеленая тема) */
+  background-color: #ffffff;
+  color: #1e3a24;
+  box-shadow: 0 4px 12px rgba(30, 58, 36, 0.08);
+}
+
+/* Логотип */
+.logo {
+  width: 45px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Заголовок сайта */
+.title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  /* Прижимаем кнопку вправо: у заголовка забираем всё свободное место */
+  margin-right: auto; 
+}
+
+/* Кнопка переключения темы */
+.switchBtnTheme {
+  background: transparent;
+  border: 2px solid #a3c2a3; /* Светло-зеленая рамка */
+  border-radius: 50%;        /* Делаем круглой */
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+/* Эффект при наведении на кнопку */
+.switchBtnTheme:hover {
+  transform: scale(1.1) rotate(15deg); /* Немного увеличивается и поворачивается */
+  border-color: #1e3a24;               /* Темнеет рамка */
+}
+
+/* Размер иконки внутри кнопки */
+.switchBtnTheme img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* ========================================= */
+/* ТЕМНАЯ ТЕМА (когда data_theme="dark")     */
+/* ========================================= */
+.headerWrapper[data_theme="dark"] {
+  /* Темный, глубокий лесной цвет */
+  background-color: #1a2e22; 
+  color: #e2ede4;            
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Меняем рамку кнопки в темной теме */
+.headerWrapper[data_theme="dark"] .switchBtnTheme {
+  border-color: #4a7c59;
+}
+
+.headerWrapper[data_theme="dark"] .switchBtnTheme:hover {
+  border-color: #e2ede4;
 }
