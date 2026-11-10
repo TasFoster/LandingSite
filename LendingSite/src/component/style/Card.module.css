@@ -1,0 +1,74 @@
+.cardWraper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  color: #1e3a24;
+  box-shadow: 0 4px 12px rgba(30, 58, 36, 0.08);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.cardWraper > img {
+  width: 100%;
+  height: 150px; 
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.content {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardWraper > p:nth-of-type(2) {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.cardWraper button {
+  align-self: flex-start;
+  background: transparent;
+  border: 2px solid #a3c2a3;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+.cardWraper button:hover {
+  transform: scale(1.1);
+  border-color: #1e3a24;
+}
+
+.cardWraper button img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.cardWraper[data-theme="dark"] {
+  background-color: #1a2e22;
+  color: #e2ede4;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.cardWraper[data-theme="dark"] button {
+  border-color: #4a7c59;
+}
+
+.cardWraper[data-theme="dark"] button:hover {
+  border-color: #e2ede4;
+}
