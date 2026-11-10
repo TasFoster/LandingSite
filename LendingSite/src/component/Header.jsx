@@ -8,6 +8,8 @@ import toLight from "./assets/toLight.png"
 
 import {currentTheme} from "../Contexts"
 
+import Button from "./Button"
+
 function Header({switchTheme}) {
 
   const theme = useContext(currentTheme)
@@ -16,11 +18,9 @@ function Header({switchTheme}) {
     <header className={style.headerWrapper} data_theme = {theme}>
       <img className={style.logo} src={logo} alt="Логотип" />
       <h1 className={style.title}>Самый крутой сайт</h1>
-      <button className={style.switchBtnTheme} onClick={switchTheme}>
-        {
-            theme == "dark" ? <img src={toLight}></img> : <img src={toDark}></img>
-        }
-      </button>
+      <Button img={theme == "dark" ? toLight : toDark} 
+        action={switchTheme}>
+      </Button>
     </header>
   )
 }
