@@ -32,31 +32,14 @@ const lorem = `Lorem ipsum dolor sit amet consectetur
 
 function App() {
 
-  const [theme, setTheme] = useState("dark")
-
-  function switchTheme(){
-      if (theme == "light"){
-        setTheme("dark")
-        return null
-      }
-      if (theme == "dark"){
-        setTheme("light")
-        return null
-      }
-  }
-
   return (
-    <currentTheme.Provider value={theme}>
       <div className={style.main}>
-        <Header switchTheme={switchTheme}></Header>
         <div className={style.cardsGrid}>
           <Card img={catImg} content={lorem}></Card>
           <Card img={logo} content={"Кирилл toLight КириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКирилл"}></Card>
           <Card img={catImg} content={lorem}></Card>
         </div>     
-        <Footer></Footer>
       </div>
-    </currentTheme.Provider>
   )
 }
 

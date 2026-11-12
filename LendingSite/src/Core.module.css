@@ -1,0 +1,10 @@
+.btnLink{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 40px;
+    border: 4px solid rgb(0, 108, 88);
+    background-color: rgb(91, 255, 219);
+    border-radius: 10px;
+}
