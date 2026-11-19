@@ -21,6 +21,7 @@ function Header({switchTheme}) {
       <h1 className={style.title}>Самый крутой сайт</h1>
       <Link className={style.btnLink} to="/"> На главную</Link>
       <Link className={style.btnLink} to="/second"> Доп</Link>
+      <Link className={style.btnLink} to="/about"> About</Link>
       <Button img={theme == "dark" ? toLight : toDark} 
         action={switchTheme}>
       </Button>

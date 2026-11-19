@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { lazy, Suspense, use, useState, useEffect } from "react"
 import Button from "./component/Button"
-import Card from "./component/Card.jsx"
+const Card = lazy(() => import("./component/Card.jsx"))
 import Footer from "./component/Footer"
 import Header from "./component/Header"
 import style from "./App.module.css"
@@ -30,14 +30,39 @@ const lorem = `Lorem ipsum dolor sit amet consectetur
                  esse harum minus dolores tenetur? Eum in 
                  sapiente corrupti mollitia voluptatum?`
 
+
+function Prom({promise}){
+  use(promise)
+  return null
+}
+
+
+
 function App() {
+  let stas = 0
+
+  stas = new Promise(
+        (resolve) => { 
+          setTimeout(
+            () => {
+              resolve()
+            },
+            10000
+          )
+        }
+      )
+
+  console.log(stas)
 
   return (
       <div className={style.main}>
         <div className={style.cardsGrid}>
-          <Card img={catImg} content={lorem}></Card>
+          <Suspense fallback={<p>ЗАГРУЗКА...</p>}> 
+          <Prom promise={stas}></Prom>
+           <Card img={catImg} content={lorem}></Card>
           <Card img={logo} content={"Кирилл toLight КириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКириллКирилл"}></Card>
           <Card img={catImg} content={lorem}></Card>
+          </Suspense>
         </div>     
       </div>
   )

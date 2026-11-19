@@ -12,6 +12,7 @@ import catImg from "./component/assets/Cat.jpg"
 import logo from "./component/assets/logo.png"
 
 import style from "./Core.module.css"
+import About from "./About.jsx"
 
 const lorem = `Lorem ipsum dolor sit amet consectetur 
                 adipisicing elit. Dolore possimus, iste eum et
@@ -57,6 +58,9 @@ function Core(){
                 <Header switchTheme={switchTheme}></Header>
                 <Routes>
                     <Route path="/" element={<App/>}/>
+
+                    <Route path="/about" element={<About testText={"STASIK )))))"}/>}/>
+                    
                     <Route path="/second" element={<h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae minus est animi neque harum obcaecati ut magni labore. Aperiam doloribus beatae quis vitae suscipit. Amet ducimus minima facilis suscipit laudantium.</h1>}/>
                 </Routes>
                 <Footer></Footer>
